@@ -1,0 +1,13 @@
+<template name="moduleEdit">
+  <h2>Edit module</h2>
+  {{#autoForm collection="Modules" doc=this id="moduleForm" type="update"}}
+    <fieldset>
+      {{> afQuickField name='title'}}
+      {{> afQuickField name='description'}}
+      {{> afQuickField name='para'}}
+      {{> afQuickField name='picture'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a class="btn btn-link" role="button" href="{{pathFor 'modulesIndex'}}">Back</a>
+  {{/autoForm}}
+</template>

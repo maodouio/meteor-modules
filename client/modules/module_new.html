@@ -1,0 +1,19 @@
+<template name="moduleNew">
+  <h2>Create module</h2>
+  {{#autoForm collection="Modules" id="moduleForm" type="insert"}}
+  <fieldset>
+    {{> afQuickField name='title'}}
+    {{> afQuickField name='description'}}
+    {{> afQuickField name='para'}}
+    {{> afQuickField name='picture'}}
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Create</button>
+  <a class="btn btn-link" role="button" href="{{pathFor 'modulesIndex'}}">Back</a>
+  {{/autoForm}}
+</template>
+
+<template name="myFilePreview">
+  <div class="thumbnail">
+    <img src="{{file.url}}" alt="{{file.original.name}}" width="150px;"/>
+  </div>
+</template>

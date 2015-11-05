@@ -1,0 +1,31 @@
+<template name="modulesIndex">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>模块列表</h1>
+      <a class="btn btn-primary" href="{{pathFor 'moduleNew'}}" role="button">添加模块</a>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Created</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each modules}}
+          <tr>
+            <td><a href="{{pathFor 'moduleShow'}}">{{title}}</a></td>
+            <td>{{showPrettyTimestamp createdAt}}</td>
+            <td>
+              <a class="btn btn-xs btn-default" href="{{pathFor 'moduleEdit'}}" role="button">Edit</a>
+              <a class="btn btn-xs btn-danger delete-module" href="#" role="button">Delete</a>
+              </td>
+          </tr>
+          {{else}}
+          No modules
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
