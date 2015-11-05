@@ -1,2 +1,2 @@
 ## Microduino Module Package
-https://github.com/limingth/microduino-modules.git
+https://github.com/maodouio/meteor-modules.git
