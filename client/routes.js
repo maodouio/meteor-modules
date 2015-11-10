@@ -10,7 +10,6 @@ Router.map(function() {
     template: 'modulesIndex',
     path: '/modules',
     waitOn: function () {
-      Meteor.subscribe('images');
       return Meteor.subscribe('modules');
     },
     data: {
@@ -36,7 +35,6 @@ Router.map(function() {
     template: 'moduleShow',
     path: '/modules/:_id',
     waitOn: function () {
-      Meteor.subscribe('images');
       return Meteor.subscribe('module', this.params._id);
     },
     data: function () {
