@@ -11,11 +11,6 @@ Meteor.publish('modules', function() {
 // MODULE SHOW
 // -------------------------------------------------------
 Meteor.publish('module', function(id) {
+  check(id, Match.OneOf(String, null));
   return Modules.find(id);
-});
-
-// IMAGE
-// -------------------------------------------------------
-Meteor.publish('images', function() {
-  return Images.find();
 });

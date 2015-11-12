@@ -19,7 +19,6 @@ Package.onUse(function(api) {
   api.use('aldeed:simple-schema@1.3.2', ["server", "client"]);
   api.use('matb33:collection-hooks@0.8.0', ["server", "client"]);
   api.use('mpowaga:autoform-summernote@0.4.2', ['client']);
-  api.use('twbs:bootstrap@3.3.4', ["server", "client"]);
   api.use('cfs:standard-packages@0.5.9', ["server", "client"]);
   api.use('cfs:gridfs@0.0.33', ["server", "client"]);
   api.use('cfs:filesystem@0.1.2', ["server", "client"]);
@@ -43,9 +42,10 @@ Package.onUse(function(api) {
 
   api.addFiles("lib/collections.js");
 
+  api.addFiles("server/fixtures.js", "server");
   api.addFiles("server/permissions.js", "server");
   api.addFiles("server/publications.js", "server");
 
   api.export('Modules');
-  api.export('Images');
+  // api.export('Images');
 });
