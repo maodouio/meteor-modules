@@ -43,6 +43,7 @@ Package.onUse(function(api) {
   api.addFiles("lib/collections.js");
 
   api.addFiles("server/fixtures.js", "server");
+  api.addFiles("server/methods.js", "server");
   api.addFiles("server/permissions.js", "server");
   api.addFiles("server/publications.js", "server");
 
