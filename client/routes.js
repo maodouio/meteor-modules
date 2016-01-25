@@ -1,12 +1,41 @@
 // ***************************************************************
 // ROUTES (modules)
 // ***************************************************************
+let modulesController = RouteController.extend({
+  onBeforeAction: function () {
+    if (!ReactionCore.hasPermission('admin')) {
+      this.render("layoutHeader", {
+        to: "layoutHeader"
+      });
+      this.render("layoutFooter", {
+        to: "layoutFooter"
+      });
+      this.render("unauthorized");
+    } else {
+      this.next();
+    }
+  },
+  yieldTemplates: {
+    layoutHeader: {
+      to: "layoutHeader"
+    },
+    layoutFooter: {
+      to: "layoutFooter"
+    },
+    dashboard: {
+      to: "dashboard"
+    }
+  }
+});
+
+this.modulesController = modulesController;
 
 Router.map(function() {
 
   // MODULES INDEX
   // -------------------------------------------------------
   this.route('modulesIndex', {
+    controller: 'modulesController',
     template: 'modulesIndex',
     path: '/modules',
     waitOn: function () {
@@ -22,6 +51,7 @@ Router.map(function() {
   // MODULE NEW
   // -------------------------------------------------------
   this.route('moduleNew', {
+    controller: 'modulesController',
     template: 'moduleNew',
     path: '/modules/new',
     waitOn: function () {
@@ -32,6 +62,7 @@ Router.map(function() {
   // MODULE SHOW
   // -------------------------------------------------------
   this.route('moduleShow', {
+    controller: 'modulesController',
     template: 'moduleShow',
     path: '/modules/:_id',
     waitOn: function () {
@@ -45,6 +76,7 @@ Router.map(function() {
   // MODULE EDIT
   // -------------------------------------------------------
   this.route('moduleEdit', {
+    controller: 'modulesController',
     template: 'moduleEdit',
     path: '/modules/:_id/edit',
     waitOn: function () {
