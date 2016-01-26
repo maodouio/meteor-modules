@@ -27,6 +27,7 @@ Package.onUse(function(api) {
   // mongo and template
   // https://zh.discovermeteor.com/chapters/creating-a-meteor-package/
   api.use(['minimongo@1.0.10', 'mongo-livedata@1.0.9', 'templating@1.1.4'], 'client');
+  api.use("reactioncommerce:core@0.9.4");
 
   // file
   // ls -l | awk '{print "api.addFiles(\""$9"\", \"client\");"}'
