@@ -3,7 +3,7 @@
 // ***************************************************************
 let modulesController = RouteController.extend({
   onBeforeAction: function () {
-    if (!ReactionCore.hasPermission('admin')) {
+    if (!ReactionCore.hasPermission('admin', Meteor.user())) {
       this.render("layoutHeader", {
         to: "layoutHeader"
       });
