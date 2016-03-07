@@ -36,7 +36,7 @@ Router.map(function() {
     template: 'modulesIndex',
     path: '/modules',
     waitOn: function () {
-      return Meteor.subscribe('modules');
+      return ReactionCore.subsManager.subscribe('modules');
     },
     data: {
       modules: function () {
@@ -52,7 +52,7 @@ Router.map(function() {
     template: 'moduleNew',
     path: '/modules/new',
     waitOn: function () {
-      return Meteor.subscribe('images');
+      return ReactionCore.subsManager.subscribe('images');
     },
   });
 
@@ -63,7 +63,7 @@ Router.map(function() {
     template: 'moduleShow',
     path: '/modules/:_id',
     waitOn: function () {
-      return Meteor.subscribe('module', this.params._id);
+      return ReactionCore.subsManager.subscribe('module', this.params._id);
     },
     data: function () {
       return Modules.findOne(this.params._id);
@@ -77,7 +77,7 @@ Router.map(function() {
     template: 'moduleEdit',
     path: '/modules/:_id/edit',
     waitOn: function () {
-      return Meteor.subscribe('module', this.params._id);
+      return ReactionCore.subsManager.subscribe('module', this.params._id);
     },
     data: function () {
       return Modules.findOne(this.params._id);
